@@ -1,0 +1,6 @@
+{
+  "name": "E-Modul Interaktif Sains Dalam Al-Qur'an",
+  "description": "Modul Interaktif Sains Berbasis Problem Based Learning (PBL) dalam Memahami Materi Sains Terintegrasi Al-Qur'an untuk Kelas X SMA/MA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

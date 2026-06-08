@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;750&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Color Palette Inversion for a beautifully bright, fresh, and high-contrast Daylight Garden theme */
+  --color-slate-950: #f4fbf7; /* Soft mint off-white master background */
+  --color-slate-900: #ffffff; /* Brilliant white panel & card surfaces */
+  --color-slate-850: #f1f7f4; /* Subtle divider backgrounds */
+  --color-slate-800: #e2f2e7; /* Clean green-gray borders and outlines */
+  --color-slate-700: #94a3b8; /* Hover accents */
+  --color-slate-600: #475569; /* Soft secondary copy */
+  --color-slate-500: #475569; /* Utility info labels */
+  --color-slate-400: #334155; /* Secondary text with maximum legibility */
+  --color-slate-350: #1e293b; /* Dark charcoal text */
+  --color-slate-305: #334155; /* Body copy secondary */
+  --color-slate-300: #0f172a; /* Deep charcoal for solid bold headings */
+  --color-slate-200: #1e293b; /* Main paragraphs and lists */
+  --color-slate-100: #0f172a; /* Primary black/slate ink */
+  --color-slate-50:  #ffffff; /* Card overlays */
+
+  /* Lightening emerald dark areas to be beautiful light garden surfaces */
+  --color-emerald-990: #d1fae5; /* Softest green for headers */
+  --color-emerald-950: #eafcf1; /* Light mint tint background for quote blocks */
+  --color-emerald-900: #044e39; /* Deep organic green for reading headers */
+  --color-emerald-400: #0d9488; /* Highly visible forest accent green */
+  --color-emerald-500: #10b981; /* Standard interactive buttons */
+  
+  /* Translating teal values to light pastel/spring greens */
+  --color-teal-980: #e2f9f5;
+  --color-teal-990: #ccfbf1;
+  --color-teal-950: #f0fdfa;
+  --color-teal-900: #0f766e;
+
+  /* Diluting deep warning red areas for cozy light alerts */
+  --color-red-950: #fef2f2;
+  --color-red-900: #991b1b;
+}
+
+/* Custom styles for layout, scrollbars, and fine typography */
+body {
+  font-family: var(--font-sans);
+  background-color: #f4fbf7; /* Beautiful bright leaf-tinted off-white background */
+  color: #1e293b;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+pre, code, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Elegant custom scrollbar to match our fresh bright garden theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f7f4; /* light mint */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 185, 129, 0.25); /* soft mint-green */
+  border-radius: 99px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(16, 185, 129, 0.5);
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 185, 129, 0.2);
+  border-radius: 99px;
+}
+
+/* SUPPLEMENTAL GENERAL HIGHER-CONTRAST LIGHT THEME RULES */
+/* Ensure headings inside light white cards are crisp dark charcoal instead of light gray */
+.text-slate-100, .text-slate-200, .text-slate-300, .text-slate-305, .text-slate-350, .text-white {
+  color: #0f172a; /* high contrast deep slate */
+}
+
+/* Ensure secondary body text inside panels doesn't get washed out */
+.text-slate-400, .text-slate-500, .text-slate-501 {
+  color: #475569 !important; /* reliable slate-600 */
+}
+
+/* Force specific titles inside white boxes to stand out wonderfully */
+h1, h2, h3, h4, strong {
+  color: #0f172a !important;
+}
+
+/* Keep actual white text for buttons, badges, and headers filled with prominent emerald/teal gradients */
+button .text-white,
+button.bg-emerald-500,
+button.bg-emerald-600,
+button.bg-teal-500,
+button.bg-linear-to-r,
+.bg-emerald-500,
+.bg-emerald-600,
+.bg-emerald-500 .text-white,
+.bg-emerald-600 .text-white,
+.bg-emerald-500 span,
+.bg-emerald-600 span,
+.bg-linear-to-r h2,
+.bg-linear-to-r span,
+.bg-linear-to-r p,
+.bg-linear-to-r button,
+.bg-linear-to-r .text-white,
+.bg-linear-to-r .text-emerald-100,
+.bg-linear-to-r .text-emerald-250,
+.bg-linear-to-r .text-emerald-300,
+.bg-linear-to-r .text-teal-300 {
+  color: #ffffff !important;
+}
+
+/* Force light background for select/input elements */
+input, textarea, select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 1px #10b981 !important;
+}
+
+/* Custom exception for layout borders to keep them very crisp and lovely */
+.border-slate-900, .border-slate-800, .border-slate-850, .border-emerald-500\/10, .border-emerald-500\/20 {
+  border-color: #e2f2e7 !important;
+}
+
+/* Special overrides for the sidebar scroll nav links */
+nav button {
+  color: #475569 !important;
+}
+nav button:hover {
+  background-color: #f1fcf6 !important;
+  color: #047857 !important;
+}
+nav button.bg-emerald-500 {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+}
+nav button.bg-emerald-500 * {
+  color: #ffffff !important;
+}
+
+/* Overwrite the bottom credit borders inside sidebar */
+.border-t.border-slate-900 {
+  border-top-color: #e2f2e7 !important;
+}
+
+/* Outstanding 3D Isometric Typography System */
+.text-3d-rich-brand {
+  color: #10b981 !important; /* Premium interactive emerald */
+  font-weight: 900;
+  text-shadow: 
+    0 1px 0 #059669,
+    0 2px 0 #047857,
+    0 3px 0 #065f46,
+    0 4px 0 #064e3b,
+    0 5px 0 #022c22,
+    0 6px 1px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(16, 185, 129, 0.25);
+}
+
+.text-3d-rich-quran {
+  color: #b45309 !important; /* Rich amber spiritual accent */
+  font-weight: 900;
+  text-shadow: 
+    0 1px 0 #92400e,
+    0 2px 0 #78350f,
+    0 3px 0 #451a03,
+    0 4px 0 #2d1002,
+    0 5px 1px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(245, 158, 11, 0.25);
+}
+
+.text-3d-rich-main {
+  color: #0f172a !important; /* Solid Slate Black */
+  font-weight: 900;
+  text-shadow: 
+    0 1px 0 #334155,
+    0 2px 0 #1e293b,
+    0 3px 0 #0f172a,
+    0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+
